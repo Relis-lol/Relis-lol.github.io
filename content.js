@@ -1,32 +1,32 @@
 /*
-  HIER TRÄGST DU DEINE INHALTE EIN.
-  Diese Datei ist die einzige, die du zum Pflegen der Seite bearbeiten musst.
-  Screenshots einfach in die passenden Ordner unter assets/img/tileX/ legen
-  und hier unter "images" mit ihrem Dateinamen eintragen (Reihenfolge = Abspielreihenfolge).
+  THIS IS WHERE YOU EDIT YOUR CONTENT.
+  It is the only file you need to touch to maintain the page.
+  Drop screenshots into the matching assets/img/tileX/ folder and list their
+  filenames under "images" below (array order = playback order).
 */
 
 window.PORTFOLIO_DATA = {
   profile: {
     name: "Björn Boldt",
     role: "Junior Cloud & Platform Operations",
-    roleSecondary: "Linux-first · Container · Automatisierung · Performance",
+    roleSecondary: "Linux-first · Containers · Automation · Performance",
     status: "Open to Junior Opportunities",
     avatar: "assets/avatar.jpg",
     github: "https://github.com/Relis-lol",
     linkedin: "https://www.linkedin.com/in/björn-boldt",
-    location: "Nürnberg, Deutschland",
-    cv: "", // Pfad zu einer PDF, z.B. "assets/cv.pdf" — leer lassen zum Ausblenden
+    location: "Nuremberg, Germany",
+    cv: "", // Path to a PDF, e.g. "assets/cv.pdf" — leave empty to hide the button
     certifications: [
       "Microsoft Certified: Azure Fundamentals (AZ-900)"
     ]
   },
 
   hero: {
-    heading: "Ich entwickle und betreibe praxisnahe Linux- und Cloud-Systeme.",
-    text: "Als IT-Quereinsteiger verbinde ich praktische Erfahrung aus eigenen Produktivsystemen mit Linux, Docker, Python, PostgreSQL und Azure-Grundlagen. Ich suche den beruflichen Einstieg in Cloud-, Platform- oder Infrastructure Operations mit Fokus auf Automatisierung, Stabilität und Performance.",
+    heading: "I build and operate real-world Linux and cloud systems.",
+    text: "A career changer into IT, working from hands-on experience with production systems I run myself: Linux, Docker, Python, PostgreSQL and Azure fundamentals. I'm looking for an entry-level role in cloud, platform or infrastructure operations, with a focus on automation, stability and performance.",
     stats: [
-      { value: "Junior", label: "IT-Quereinstieg" },
-      { value: "Linux-first", label: "Operations & Automatisierung" },
+      { value: "Junior", label: "Career changer into IT" },
+      { value: "Linux-first", label: "Operations & automation" },
       { value: "AZ-900", label: "Azure Fundamentals" }
     ],
     skills: [
@@ -34,131 +34,201 @@ window.PORTFOLIO_DATA = {
     ]
   },
 
-  // Genau 6 Kacheln, 3 Spalten x 2 Reihen. Reihe 1 = "Project 1" (die
-  // EVE-Market-Tools-Präsentation: metrics, gallery, links), Reihe 2 =
-  // "Project 2" (gewöhnliche Screenshot-Slots "type: showcase", warten noch
-  // auf Inhalt). "imageFolder" ist fest an den physischen assets/img/-Ordner
-  // gebunden und bleibt beim Umsortieren der Kacheln stabil.
+  // Tiles are laid out three per row, and one row = one project. Every third
+  // entry starts a new row and gets the vertical label on the left ("Project 1",
+  // "Project 2", ...), so adding another group of three below is enough to grow
+  // the grid — no change to script.js or style.css required. Optionally set
+  // rowLabels: ["EVE Platform", "DispoHub", ...] to name the rows yourself.
+  //
+  // Row 1 = EVE Market Tools (metrics, gallery, links).
+  // Row 2 = DispoHub (keywords, gallery, links).
+  // Row 3 = reserved for the next project.
+  // "imageFolder" is bound to the physical assets/img/ directory and stays
+  // stable when tiles are reordered.
   tiles: [
     {
-      // Kachel 1 (links oben): animierte Mini-Präsentation realer Kennzahlen
-      // der EVE-Market-Tools-Plattform. Werte kommen aus platformMetrics unten.
+      // Tile 1 (top left): animated mini-presentation of real key figures from
+      // the EVE Market Tools platform. Values come from platformMetrics below.
       type: "metrics",
       cardTitle: "EVE Platform · Live Metrics",
       cardCategory: "Production Data Platform",
-      ariaLabel: "Kennzahlen der produktiven EVE-Market-Tools-Plattform"
+      ariaLabel: "Key metrics of the production EVE Market Tools platform"
     },
     {
-      // Kachel 2 (mitte oben): Screenshot-Präsentation der EVE Market Tools.
-      // Bilder liegen in assets/img/tile5/.
+      // Tile 2 (top centre): screenshot presentation of EVE Market Tools.
+      // Images live in assets/img/tile5/.
       type: "gallery",
       cardTitle: "EVE Market Tools",
       cardCategory: "Self-hosted Data & Intelligence Platform",
       imageFolder: "tile5",
       images: [
-        { src: "Kachel 2 Desktop 1.png", alt: "EVE Market Tools – Ansicht 1" },
-        { src: "Kachel 2 Desktop 2.png", alt: "EVE Market Tools – Ansicht 2" },
-        { src: "Kachel 2 Desktop 3.png", alt: "EVE Market Tools – Ansicht 3" },
-        { src: "Kachel 2 Desktop 4.png", alt: "EVE Market Tools – Ansicht 4" },
-        { src: "Kachel 2 Desktop 5.png", alt: "EVE Market Tools – Ansicht 5" },
-        { src: "Kachel 2 Desktop 6.png", alt: "EVE Market Tools – Ansicht 6" }
+        { src: "Kachel 2 Desktop 1.png", alt: "EVE Market Tools – view 1" },
+        { src: "Kachel 2 Desktop 2.png", alt: "EVE Market Tools – view 2" },
+        { src: "Kachel 2 Desktop 3.png", alt: "EVE Market Tools – view 3" },
+        { src: "Kachel 2 Desktop 4.png", alt: "EVE Market Tools – view 4" },
+        { src: "Kachel 2 Desktop 5.png", alt: "EVE Market Tools – view 5" },
+        { src: "Kachel 2 Desktop 6.png", alt: "EVE Market Tools – view 6" }
       ]
     },
     {
-      // Kachel 3 (rechts oben): direkter Projektzugang, keine Bilder.
+      // Tile 3 (top right): direct project access, no images.
       type: "links",
-      cardTitle: "Projekt ansehen",
-      cardCategory: "Code, Dokumentation und Live-System",
+      cardTitle: "View the project",
+      cardCategory: "Code, documentation and live system",
       links: [
         {
           type: "live",
           title: "Live Platform",
-          description: "EVE Market Tools öffnen",
+          description: "Open EVE Market Tools",
           label: "Live Production System",
           url: "https://eve-tradelooper.com/",
-          ariaLabel: "EVE Market Tools Live-Plattform in neuem Tab öffnen"
+          ariaLabel: "Open the EVE Market Tools live platform in a new tab"
         },
         {
           type: "github",
           title: "GitHub Repository",
-          description: "Architektur und technische Dokumentation",
+          description: "Architecture and technical documentation",
           label: "Source & Documentation",
           url: "https://github.com/Relis-lol/homelab-hybrid-cloud-platform",
-          ariaLabel: "GitHub-Repository des Homelab-Projekts in neuem Tab öffnen"
+          ariaLabel: "Open the homelab project's GitHub repository in a new tab"
         }
       ]
     },
     {
-      type: "showcase",
-      title: "Projekt 1",
-      keywords: ["React", "TypeScript", "Stripe"],
-      link: "",
+      // Tile 4 (row 2, left): the stack at a glance. Static on purpose — this
+      // is the tile a recruiter scans for technology names.
+      type: "keywords",
+      cardTitle: "DispoHub · Stack",
+      cardCategory: "Dispatch & Fleet Management Platform",
+      ariaLabel: "Technologies used in the DispoHub project",
+      // Shown on the small tile face — keep this to roughly a dozen entries so
+      // nothing gets clipped. The full grouped list below appears in the modal.
+      highlights: [
+        "Python", "FastAPI", "SQLAlchemy", "PostgreSQL", "Docker", "Jinja2",
+        "WebSockets", "pytest", "Alembic", "PWA", "RBAC", "i18n"
+      ],
+      groups: [
+        { label: "Backend", items: ["Python", "FastAPI", "SQLAlchemy", "Alembic"] },
+        { label: "Database", items: ["PostgreSQL", "SQLite", "Migrations"] },
+        { label: "Frontend", items: ["Jinja2", "JavaScript", "WebSockets", "PWA"] },
+        { label: "Ops & quality", items: ["Docker", "pytest", "RBAC", "i18n"] }
+      ]
+    },
+    {
+      // Tile 5 (row 2, centre): screenshots. Images live in assets/img/tile1/.
+      type: "gallery",
+      cardTitle: "DispoHub",
+      cardCategory: "Self-hosted Dispatch System for Small Fleets",
       imageFolder: "tile1",
+      images: [
+        { src: "01-dashboard.png", alt: "DispoHub – management dashboard" },
+        { src: "02-vehicles.png", alt: "DispoHub – vehicle records" },
+        { src: "03-calendar.png", alt: "DispoHub – month calendar grid" },
+        { src: "04-tasks.png", alt: "DispoHub – office task list" },
+        { src: "05-forms.png", alt: "DispoHub – printable forms" }
+      ]
+    },
+    {
+      // Tile 6 (row 2, right): direct project access, no images.
+      type: "links",
+      cardTitle: "View the project",
+      cardCategory: "Source code and technical documentation",
+      links: [
+        {
+          type: "github",
+          title: "GitHub Repository",
+          description: "Open source, MIT licensed",
+          label: "Source",
+          url: "https://github.com/Relis-lol/dispohub",
+          ariaLabel: "Open the DispoHub GitHub repository in a new tab"
+        },
+        {
+          type: "docs",
+          title: "Architecture",
+          description: "Design decisions and trade-offs",
+          label: "Documentation",
+          url: "https://github.com/Relis-lol/dispohub/blob/main/docs/ARCHITECTURE.md",
+          ariaLabel: "Open the DispoHub architecture documentation in a new tab"
+        }
+      ]
+    },
+
+    // ---- Row 3: reserved for the next project ----------------------------
+    // Easiest path is to copy row 2: turn the first tile into "keywords" with
+    // your stack, the second into "gallery" with screenshots from
+    // assets/img/tile8/, and the third into "links" pointing at the repo and
+    // its documentation. Until then each renders a neutral "Coming Soon"
+    // placeholder — title and keywords stay hidden while a tile has no images.
+    {
+      type: "showcase",
+      title: "Next project",
+      keywords: [],
+      link: "",
+      imageFolder: "tile7",
       images: []
     },
     {
       type: "showcase",
-      title: "Projekt 2",
-      keywords: ["Node.js", "PostgreSQL", "Docker"],
+      title: "Next project",
+      keywords: [],
       link: "",
-      imageFolder: "tile2",
+      imageFolder: "tile8",
       images: []
     },
     {
       type: "showcase",
-      title: "Projekt 3",
-      keywords: ["Next.js", "Tailwind"],
+      title: "Next project",
+      keywords: [],
       link: "",
-      imageFolder: "tile3",
+      imageFolder: "tile9",
       images: []
     }
   ],
 
-  // Slides für die Kennzahlen-Kachel (Kachel 4). Reale Messwerte /
-  // Tagesdurchschnitte der selbst betriebenen Plattform, keine SLAs.
+  // Slides for the metrics tile. Real measurements / daily averages from the
+  // self-operated platform — not SLAs.
   platformMetrics: [
     {
       category: "DATA THROUGHPUT",
-      value: "≈ 7,5 Mio.",
-      label: "neue DB-Zeilen pro Tag",
-      detail: "real gemessener Tagesdurchschnitt"
+      value: "≈ 7.5M",
+      label: "new database rows per day",
+      detail: "measured daily average"
     },
     {
       category: "DATABASE SCALE",
-      value: "124,3 Mio.",
-      label: "Live-Zeilen in PostgreSQL",
-      detail: "70 GB · 81 Tabellen"
+      value: "124.3M",
+      label: "live rows in PostgreSQL",
+      detail: "70 GB · 81 tables"
     },
     {
       category: "AUTOMATION",
-      value: "≈ 9.650",
-      label: "orchestrierte Import-Läufe pro Tag",
-      detail: "14 automatisierte Pipelines"
+      value: "≈ 9,650",
+      label: "orchestrated import runs per day",
+      detail: "14 automated pipelines"
     },
     {
       category: "API INTEGRATION",
-      value: "7 Quellen",
-      label: "rund 30 integrierte API-Endpunkte",
-      detail: "inkrementell · rate-limit-konform"
+      value: "7 sources",
+      label: "around 30 integrated API endpoints",
+      detail: "incremental · rate-limit compliant"
     },
     {
       category: "MONITORING & RECOVERY",
-      value: "5 Min.",
-      label: "Monitoring- und Alerting-Zyklus",
-      detail: "automatischer Backup-Fallback"
+      value: "5 min",
+      label: "monitoring and alerting cycle",
+      detail: "automatic backup fallback"
     },
     {
       category: "PERFORMANCE",
       value: "≈ 80 ms",
-      label: "Homepage-Ladezeit über HTTPS",
-      detail: "≈ 1 ms interner Health-Check, warm"
+      label: "homepage load time over HTTPS",
+      detail: "≈ 1 ms internal health check, warm"
     }
   ],
 
-  // Dekorativer Hintergrund-Layer ("Linux Script Spotlight Reveal"). Rein
-  // kuratierte, ungefährliche Beispielzeilen — keine echten Hosts, Tokens
-  // oder Zugangsdaten. Wird gekachelt/rotiert, um eine große Textfläche zu
-  // füllen, siehe attachCodeReveal() in script.js.
+  // Decorative background layer ("Linux script spotlight reveal"). Curated,
+  // harmless sample lines only — no real hosts, tokens or credentials. Tiled
+  // and rotated to fill a large text area, see attachCodeReveal() in script.js.
   backgroundCodeLines: [
     "systemctl status api.service",
     "systemctl restart worker.service",

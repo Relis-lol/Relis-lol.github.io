@@ -44,8 +44,8 @@
 
     const list = document.getElementById("contact-list");
     const items = [];
-    if (p.github) items.push({ href: p.github, icon: ICONS.github, label: "GitHub", aria: "GitHub-Profil in neuem Tab öffnen" });
-    if (p.linkedin) items.push({ href: p.linkedin, icon: ICONS.linkedin, label: "LinkedIn", aria: "LinkedIn-Profil in neuem Tab öffnen" });
+    if (p.github) items.push({ href: p.github, icon: ICONS.github, label: "GitHub", aria: "Open GitHub profile in a new tab" });
+    if (p.linkedin) items.push({ href: p.linkedin, icon: ICONS.linkedin, label: "LinkedIn", aria: "Open LinkedIn profile in a new tab" });
     if (p.location) items.push({ href: null, icon: ICONS.pin, label: p.location });
 
     items.forEach(it => {
@@ -297,7 +297,7 @@
     const card = el("div", "tile tile--metrics");
     card.tabIndex = 0;
     card.setAttribute("role", "group");
-    card.setAttribute("aria-label", tile.ariaLabel || "Kennzahlen der produktiven EVE-Market-Tools-Plattform");
+    card.setAttribute("aria-label", tile.ariaLabel || "Key metrics of the production EVE Market Tools platform");
 
     attachSpotlight(card);
 
@@ -392,6 +392,44 @@
     return card;
   }
 
+  // ---- tile type: keywords ----
+  // A static, scannable stack summary. Deliberately not animated: this is the
+  // tile a recruiter reads first, and moving text is the opposite of helpful
+  // when someone is scanning for a technology name.
+  function buildKeywordsTile(tile) {
+    const groups = tile.groups || [];
+    const card = el("div", "tile tile--keywords");
+    card.tabIndex = 0;
+    card.setAttribute("role", "button");
+    card.setAttribute("aria-label", tile.ariaLabel || `${tile.cardTitle} — technologies used`);
+
+    attachSpotlight(card);
+    card.appendChild(buildStaticHeader(tile.cardCategory, tile.cardTitle));
+
+    // The tile face is small (4:3, ~100px of usable height), so it carries a
+    // flat, scannable set of tags rather than the labelled groups — those
+    // would overflow and get clipped. "highlights" picks what shows here;
+    // the full grouped stack lives in the modal, which has the room for it.
+    const shown = tile.highlights && tile.highlights.length
+      ? tile.highlights
+      : groups.flatMap(g => g.items || []);
+
+    const wrap = el("div", "kw-cloud");
+    shown.forEach(item => wrap.appendChild(el("span", "tile__kw", item)));
+    card.appendChild(wrap);
+
+    const openBig = () => openKeywordsModal(tile, groups);
+    card.addEventListener("click", openBig);
+    card.addEventListener("keydown", (e) => {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        openBig();
+      }
+    });
+
+    return card;
+  }
+
   // ---- tile type: links (bottom-right) ----
   function buildLinksTile(tile) {
     const card = el("div", "tile tile--links");
@@ -430,11 +468,18 @@
     return label;
   }
 
+  // One row = one project. Every third tile opens a new row and gets the
+  // vertical label on the left, so adding another group of three to
+  // DATA.tiles is all it takes to grow the grid — no code change needed.
+  // Labels come from DATA.rowLabels when present, otherwise they count up.
   function renderTiles() {
     const wrap = document.getElementById("tiles");
-    DATA.tiles.slice(0, 6).forEach((tile, i) => {
-      if (i === 0) wrap.appendChild(buildRowLabel("Project 1"));
-      if (i === 3) wrap.appendChild(buildRowLabel("Project 2"));
+    const labels = DATA.rowLabels || [];
+    DATA.tiles.forEach((tile, i) => {
+      if (i % 3 === 0) {
+        const row = i / 3;
+        wrap.appendChild(buildRowLabel(labels[row] || `Project ${row + 1}`));
+      }
 
       let node;
       switch (tile.type) {
@@ -443,6 +488,9 @@
           break;
         case "gallery":
           node = buildGalleryTile(tile, i);
+          break;
+        case "keywords":
+          node = buildKeywordsTile(tile);
           break;
         case "links":
           node = buildLinksTile(tile, i);
@@ -471,7 +519,8 @@
     stage.innerHTML = "";
     keywords.innerHTML = "";
     dots.innerHTML = "";
-    stage.classList.remove("is-metrics");
+    document.getElementById("modal-cta").innerHTML = "";
+    stage.classList.remove("is-metrics", "is-keywords");
     title.textContent = titleText;
     if (categoryText) keywords.appendChild(el("span", "tile__kw", categoryText));
 
@@ -528,6 +577,25 @@
     } else {
       stage.appendChild(el("div", "tile__placeholder", "Coming Soon"));
     }
+
+    // A showcase tile may point at a deeper write-up (case study, live system,
+    // repository). Without this the "link" field in content.js would silently
+    // do nothing — the modal is the only place a showcase tile can offer it.
+    if (hasImages && tile.link) {
+      const cta = document.getElementById("modal-cta");
+      const a = el("a");
+      a.href = tile.link;
+      a.target = "_blank";
+      a.rel = "noopener";
+      a.setAttribute("aria-label", `${tile.linkLabel || "View project"} — ${tile.title} (opens in a new tab)`);
+      a.innerHTML = `<span>${tile.linkLabel || "View project"}</span>` +
+        `<svg viewBox="0 0 16 16" width="14" height="14" fill="currentColor" aria-hidden="true">` +
+        `<path d="M3.75 2h3.5a.75.75 0 0 1 0 1.5h-3.5a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25h8.5a.25.25 0 0 0 .25-.25v-3.5a.75.75 0 0 1 1.5 0v3.5A1.75 1.75 0 0 1 12.25 14h-8.5A1.75 1.75 0 0 1 2 12.25v-8.5C2 2.784 2.784 2 3.75 2Z"/>` +
+        `<path d="M14 1.75v3.5a.75.75 0 0 1-1.5 0V3.56L7.28 8.78a.75.75 0 1 1-1.06-1.06L11.44 2.5H9.75a.75.75 0 0 1 0-1.5h3.5a.75.75 0 0 1 .75.75Z"/>` +
+        `</svg>`;
+      cta.appendChild(a);
+    }
+
     wireModalSlideshow(stage, dots, frames, FRAME_DWELL_MS);
   }
 
@@ -542,6 +610,21 @@
       return frame;
     });
     wireModalSlideshow(stage, dots, frames, GALLERY_DWELL_MS);
+  }
+
+  function openKeywordsModal(tile, groups) {
+    const { stage } = openModalShell(tile.cardTitle, tile.cardCategory);
+    stage.classList.add("is-keywords");
+    const wrap = el("div", "modal-kw-groups");
+    groups.forEach(group => {
+      const row = el("div", "modal-kw-group");
+      row.appendChild(el("span", "modal-kw-group__label", group.label));
+      const items = el("div", "modal-kw-group__items");
+      (group.items || []).forEach(item => items.appendChild(el("span", "tile__kw", item)));
+      row.appendChild(items);
+      wrap.appendChild(row);
+    });
+    stage.appendChild(wrap);
   }
 
   function openMetricsModal(tile, metrics) {
