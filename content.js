@@ -147,7 +147,7 @@ window.PORTFOLIO_DATA = {
           title: "Architecture",
           description: "Design decisions and trade-offs",
           label: "Documentation",
-          url: "https://github.com/Relis-lol/dispohub/blob/main/docs/ARCHITECTURE.md",
+          url: "https://github.com/Relis-lol/fleethubdoc",
           ariaLabel: "Open the DispoHub architecture documentation in a new tab"
         }
       ]
