@@ -712,6 +712,17 @@ body {
    loosening either one clips the last row. */
 .tile--keywords .tile-header { margin-bottom: 7px; }
 
+.kw-summary {
+  position: relative;
+  z-index: 2;
+  margin: 0 0 7px;
+  color: var(--fg-muted);
+  font-size: 10.5px;
+  line-height: 1.35;
+}
+
+.tile--keywords.has-summary .tile-header { margin-bottom: 5px; }
+
 .kw-cloud {
   position: relative;
   z-index: 2;
@@ -746,6 +757,13 @@ body {
   display: flex;
   flex-direction: column;
   gap: 16px;
+}
+.modal-kw-summary {
+  margin: 0;
+  color: var(--fg-muted);
+  font-size: 14px;
+  line-height: 1.55;
+  max-width: 700px;
 }
 .modal-kw-group {
   display: flex;

@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="650" viewBox="0 0 960 650" role="img" aria-labelledby="title desc">
+  <title id="title">OpsProbe deterministic health check demo</title>
+  <desc id="desc">Sanitized terminal-style sample output labeled demo data.</desc>
+  <rect width="960" height="650" rx="18" fill="#0d1117"/>
+  <rect width="960" height="42" rx="18" fill="#161b22"/>
+  <circle cx="24" cy="21" r="6" fill="#ff5f56"/><circle cx="44" cy="21" r="6" fill="#ffbd2e"/><circle cx="64" cy="21" r="6" fill="#27c93f"/>
+  <g font-family="ui-monospace, SFMono-Regular, Consolas, monospace" font-size="16" fill="#c9d1d9">
+    <text x="28" y="75" fill="#d29922">DEMO DATA — deterministic sample; not system measurements</text>
+    <text x="28" y="107" fill="#f0f6fc" font-weight="700">OpsProbe</text>
+    <text x="28" y="131" fill="#484f58">──────────────────────────────────────────</text>
+    <text x="28" y="166" fill="#8b949e" font-weight="700">SYSTEM</text>
+    <text x="28" y="194" fill="#3fb950">✓</text><text x="54" y="194">Load average</text><text x="330" y="194">0.42</text>
+    <text x="28" y="220" fill="#3fb950">✓</text><text x="54" y="220">Memory</text><text x="330" y="220">38%</text>
+    <text x="28" y="246" fill="#3fb950">✓</text><text x="54" y="246">Root filesystem</text><text x="330" y="246">51%</text>
+    <text x="28" y="272" fill="#3fb950">✓</text><text x="54" y="272">Uptime</text><text x="330" y="272">18d 7h</text>
+    <text x="28" y="298" fill="#3fb950">✓</text><text x="54" y="298">CPU temperature</text><text x="330" y="298">52°C</text>
+    <text x="500" y="166" fill="#8b949e" font-weight="700">SERVICES</text>
+    <text x="500" y="194" fill="#3fb950">✓</text><text x="526" y="194">ssh</text><text x="760" y="194">active</text>
+    <text x="500" y="220" fill="#3fb950">✓</text><text x="526" y="220">cron</text><text x="760" y="220">active</text>
+    <text x="500" y="246" fill="#3fb950">✓</text><text x="526" y="246">docker</text><text x="760" y="246">active</text>
+    <text x="28" y="342" fill="#8b949e" font-weight="700">DOCKER</text>
+    <text x="28" y="370" fill="#3fb950">✓</text><text x="54" y="370">postgres</text><text x="330" y="370">healthy</text>
+    <text x="28" y="396" fill="#3fb950">✓</text><text x="54" y="396">api</text><text x="330" y="396">healthy</text>
+    <text x="28" y="422" fill="#d29922">⚠</text><text x="54" y="422">frontend</text><text x="330" y="422">4 restarts</text>
+    <text x="500" y="342" fill="#8b949e" font-weight="700">SECURITY</text>
+    <text x="500" y="370" fill="#3fb950">✓</text><text x="526" y="370">Firewall</text><text x="760" y="370">active</text>
+    <text x="500" y="396" fill="#3fb950">✓</text><text x="526" y="396">SSH root login</text><text x="760" y="396">restricted</text>
+    <text x="500" y="422" fill="#3fb950">✓</text><text x="526" y="422">Password auth</text><text x="760" y="422">disabled</text>
+    <text x="500" y="448" fill="#d29922">⚠</text><text x="526" y="448">Security updates</text><text x="760" y="448">3 available</text>
+    <text x="28" y="484" fill="#8b949e" font-weight="700">BACKUPS</text>
+    <text x="28" y="512" fill="#3fb950">✓</text><text x="54" y="512">Last daily backup</text><text x="330" y="512">6h ago</text>
+    <text x="28" y="558" fill="#8b949e" font-weight="700">SUMMARY</text>
+    <text x="28" y="588"><tspan fill="#3fb950">14 PASS</tspan><tspan fill="#8b949e"> · </tspan><tspan fill="#d29922">2 WARN</tspan><tspan fill="#8b949e"> · </tspan><tspan fill="#f85149">0 FAIL</tspan><tspan fill="#8b949e"> · 0 SKIP</tspan></text>
+  </g>
+</svg>

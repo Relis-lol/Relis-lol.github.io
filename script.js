@@ -406,6 +406,13 @@
     attachSpotlight(card);
     card.appendChild(buildStaticHeader(tile.cardCategory, tile.cardTitle));
 
+    if (tile.summary) {
+      card.classList.add("has-summary");
+      const summary = el("p", "kw-summary");
+      summary.textContent = tile.summary;
+      card.appendChild(summary);
+    }
+
     // The tile face is small (4:3, ~100px of usable height), so it carries a
     // flat, scannable set of tags rather than the labelled groups — those
     // would overflow and get clipped. "highlights" picks what shows here;
@@ -616,6 +623,11 @@
     const { stage } = openModalShell(tile.cardTitle, tile.cardCategory);
     stage.classList.add("is-keywords");
     const wrap = el("div", "modal-kw-groups");
+    if (tile.summary) {
+      const summary = el("p", "modal-kw-summary");
+      summary.textContent = tile.summary;
+      wrap.appendChild(summary);
+    }
     groups.forEach(group => {
       const row = el("div", "modal-kw-group");
       row.appendChild(el("span", "modal-kw-group__label", group.label));

@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="520" viewBox="0 0 980 520" role="img" aria-labelledby="title desc">
+  <title id="title">OpsProbe stable JSON demo</title>
+  <desc id="desc">Sanitized JSON report snippet using deterministic demo data.</desc>
+  <rect width="980" height="520" rx="18" fill="#0d1117"/>
+  <rect width="980" height="42" rx="18" fill="#161b22"/>
+  <circle cx="24" cy="21" r="6" fill="#ff5f56"/><circle cx="44" cy="21" r="6" fill="#ffbd2e"/><circle cx="64" cy="21" r="6" fill="#27c93f"/>
+  <g font-family="ui-monospace, SFMono-Regular, Consolas, monospace" font-size="16" fill="#c9d1d9">
+    <text x="28" y="78">{</text>
+    <text x="54" y="108"><tspan fill="#79c0ff">"version"</tspan>: <tspan fill="#a5d6ff">"1"</tspan>,</text>
+    <text x="54" y="138"><tspan fill="#79c0ff">"host"</tspan>: <tspan fill="#a5d6ff">"demo-host"</tspan>,</text>
+    <text x="54" y="168"><tspan fill="#79c0ff">"timestamp"</tspan>: <tspan fill="#a5d6ff">"2026-01-01T12:00:00Z"</tspan>,</text>
+    <text x="54" y="198"><tspan fill="#79c0ff">"status"</tspan>: <tspan fill="#a5d6ff">"warning"</tspan>,</text>
+    <text x="54" y="228"><tspan fill="#79c0ff">"demo_data"</tspan>: <tspan fill="#ff7b72">true</tspan>,</text>
+    <text x="54" y="258"><tspan fill="#79c0ff">"summary"</tspan>: {</text>
+    <text x="80" y="288"><tspan fill="#79c0ff">"pass"</tspan>: <tspan fill="#d2a8ff">14</tspan>, <tspan fill="#79c0ff">"warn"</tspan>: <tspan fill="#d2a8ff">2</tspan>, <tspan fill="#79c0ff">"fail"</tspan>: <tspan fill="#d2a8ff">0</tspan>, <tspan fill="#79c0ff">"skip"</tspan>: <tspan fill="#d2a8ff">0</tspan></text>
+    <text x="54" y="318">},</text>
+    <text x="54" y="348"><tspan fill="#79c0ff">"checks"</tspan>: [</text>
+    <text x="80" y="378">{ <tspan fill="#79c0ff">"id"</tspan>: <tspan fill="#a5d6ff">"system.load"</tspan>, <tspan fill="#79c0ff">"status"</tspan>: <tspan fill="#a5d6ff">"PASS"</tspan>, <tspan fill="#79c0ff">"value"</tspan>: <tspan fill="#d2a8ff">0.42</tspan> },</text>
+    <text x="80" y="408">{ <tspan fill="#79c0ff">"id"</tspan>: <tspan fill="#a5d6ff">"docker.container.frontend"</tspan>, <tspan fill="#79c0ff">"status"</tspan>: <tspan fill="#a5d6ff">"WARN"</tspan> }</text>
+    <text x="54" y="438">]</text>
+    <text x="28" y="468">}</text>
+    <text x="620" y="490" fill="#8b949e">stdout: one valid JSON document</text>
+  </g>
+</svg>

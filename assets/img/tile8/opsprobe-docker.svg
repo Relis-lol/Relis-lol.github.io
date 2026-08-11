@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="390" viewBox="0 0 900 390" role="img" aria-labelledby="title desc">
+  <title id="title">OpsProbe Docker deterministic demo</title>
+  <desc id="desc">Sanitized container status sample with generic names.</desc>
+  <rect width="900" height="390" rx="18" fill="#0d1117"/>
+  <rect width="900" height="42" rx="18" fill="#161b22"/>
+  <circle cx="24" cy="21" r="6" fill="#ff5f56"/><circle cx="44" cy="21" r="6" fill="#ffbd2e"/><circle cx="64" cy="21" r="6" fill="#27c93f"/>
+  <g font-family="ui-monospace, SFMono-Regular, Consolas, monospace" font-size="17" fill="#c9d1d9">
+    <text x="28" y="78" fill="#d29922">DEMO DATA — no Docker daemon queried</text>
+    <text x="28" y="116" fill="#8b949e" font-weight="700">DOCKER</text>
+    <text x="28" y="150" fill="#3fb950">✓</text><text x="56" y="150">postgres</text><text x="260" y="150">healthy</text><text x="460" y="150" fill="#8b949e">postgres:17</text>
+    <text x="28" y="184" fill="#3fb950">✓</text><text x="56" y="184">api</text><text x="260" y="184">healthy</text><text x="460" y="184" fill="#8b949e">example/api:1.0</text>
+    <text x="28" y="218" fill="#d29922">⚠</text><text x="56" y="218">frontend</text><text x="260" y="218">4 restarts</text><text x="460" y="218" fill="#8b949e">example/frontend:1.0</text>
+    <text x="28" y="270" fill="#8b949e" font-weight="700">SUMMARY</text>
+    <text x="28" y="304"><tspan fill="#3fb950">2 PASS</tspan><tspan fill="#8b949e"> · </tspan><tspan fill="#d29922">1 WARN</tspan><tspan fill="#8b949e"> · </tspan><tspan fill="#f85149">0 FAIL</tspan></text>
+    <text x="28" y="348" fill="#8b949e">Inspection only. Restart requires: opsprobe docker restart &lt;container&gt;</text>
+  </g>
+</svg>

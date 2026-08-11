@@ -42,7 +42,7 @@ window.PORTFOLIO_DATA = {
   //
   // Row 1 = EVE Market Tools (metrics, gallery, links).
   // Row 2 = DispoHub (keywords, gallery, links).
-  // Row 3 = reserved for the next project.
+  // Row 3 = OpsProbe (overview, gallery, links).
   // "imageFolder" is bound to the physical assets/img/ directory and stays
   // stable when tiles are reordered.
   tiles: [
@@ -153,35 +153,58 @@ window.PORTFOLIO_DATA = {
       ]
     },
 
-    // ---- Row 3: reserved for the next project ----------------------------
-    // Easiest path is to copy row 2: turn the first tile into "keywords" with
-    // your stack, the second into "gallery" with screenshots from
-    // assets/img/tile8/, and the third into "links" pointing at the repo and
-    // its documentation. Until then each renders a neutral "Coming Soon"
-    // placeholder — title and keywords stay hidden while a tile has no images.
+    // ---- Row 3: OpsProbe -------------------------------------------------
+    // A recruiter-friendly overview, deterministic demo visuals, then direct
+    // links to the source and the published release.
     {
-      type: "showcase",
-      title: "Next project",
-      keywords: [],
-      link: "",
-      imageFolder: "tile7",
-      images: []
+      type: "keywords",
+      cardTitle: "OpsProbe",
+      cardCategory: "Linux Operations CLI",
+      ariaLabel: "OpsProbe overview and technologies",
+      summary: "A small Go CLI for repeat Linux checks: health, services, containers, security, and backups.",
+      highlights: [
+        "Go", "Linux", "systemd", "Docker", "GitHub Actions",
+        "CLI Automation", "JSON", "Testing", "CI/CD"
+      ],
+      groups: [
+        { label: "Linux operations", items: ["System health", "systemd", "Docker", "Security posture", "Backup freshness"] },
+        { label: "CLI & automation", items: ["Go", "CLI Automation", "Stable JSON", "Explicit operations"] },
+        { label: "Quality & release", items: ["Testing", "GitHub Actions", "CI/CD", "Cross-compilation", "Release Engineering"] }
+      ]
     },
     {
-      type: "showcase",
-      title: "Next project",
-      keywords: [],
-      link: "",
+      type: "gallery",
+      cardTitle: "OpsProbe",
+      cardCategory: "Linux Operations CLI",
       imageFolder: "tile8",
-      images: []
+      images: [
+        { src: "opsprobe-check.svg", alt: "OpsProbe DEMO DATA health report covering system, services, Docker, security, backups, and summary" },
+        { src: "opsprobe-docker.svg", alt: "OpsProbe DEMO DATA Docker inspection with healthy containers and a restart warning" },
+        { src: "opsprobe-json.svg", alt: "OpsProbe deterministic JSON report marked as demo data for automation" }
+      ]
     },
     {
-      type: "showcase",
-      title: "Next project",
-      keywords: [],
-      link: "",
-      imageFolder: "tile9",
-      images: []
+      type: "links",
+      cardTitle: "Try OpsProbe",
+      cardCategory: "Source and v0.1.0 release",
+      links: [
+        {
+          type: "github",
+          title: "View on GitHub",
+          description: "Source, documentation and CI",
+          label: "Repository",
+          url: "https://github.com/Relis-lol/opsprobe",
+          ariaLabel: "Open the OpsProbe GitHub repository in a new tab"
+        },
+        {
+          type: "release",
+          title: "Download v0.1.0",
+          description: "Linux amd64, arm64 and checksums",
+          label: "GitHub Release",
+          url: "https://github.com/Relis-lol/opsprobe/releases/tag/v0.1.0",
+          ariaLabel: "Open the OpsProbe v0.1.0 release downloads in a new tab"
+        }
+      ]
     }
   ],
 
