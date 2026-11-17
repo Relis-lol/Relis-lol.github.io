@@ -60,12 +60,6 @@
       list.appendChild(node);
     });
 
-    if (p.cv) {
-      const btn = document.getElementById("cv-btn");
-      btn.href = p.cv;
-      btn.style.display = "flex";
-    }
-
     const certWrap = document.getElementById("cert-list");
     (p.certifications || []).forEach(c => {
       certWrap.appendChild(el("div", "cert-item", `${ICONS.badge}<span>${c}</span>`));
@@ -394,7 +388,7 @@
 
   // ---- tile type: keywords ----
   // A static, scannable stack summary. Deliberately not animated: this is the
-  // tile a recruiter reads first, and moving text is the opposite of helpful
+  // tile a visitor reads first, and moving text is the opposite of helpful
   // when someone is scanning for a technology name.
   function buildKeywordsTile(tile) {
     const groups = tile.groups || [];

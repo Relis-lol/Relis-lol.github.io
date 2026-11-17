@@ -8,31 +8,32 @@
 window.PORTFOLIO_DATA = {
   profile: {
     name: "Björn Boldt",
-    role: "Junior Cloud & Platform Operations",
-    roleSecondary: "Linux-first · Containers · Automation · Performance",
-    status: "Open to Junior Opportunities",
+    role: "Independent Builder & Project Operator",
+    roleSecondary: "Web services · Data platforms · Infrastructure",
+    status: "3 active project lines",
     avatar: "assets/avatar.jpg",
     github: "https://github.com/Relis-lol",
     linkedin: "https://www.linkedin.com/in/björn-boldt",
     location: "Nuremberg, Germany",
-    cv: "", // Path to a PDF, e.g. "assets/cv.pdf" — leave empty to hide the button
     certifications: [
-      "Microsoft Certified: Azure Fundamentals (AZ-900)"
+      "Background: Microsoft Azure Fundamentals (AZ-900)"
     ]
   },
 
   hero: {
-    heading: "I build and operate real-world Linux and cloud systems.",
-    text: "A career changer into IT, working from hands-on experience with production systems I run myself: Linux, Docker, Python, PostgreSQL and Azure fundamentals. I'm looking for an entry-level role in cloud, platform or infrastructure operations, with a focus on automation, stability and performance.",
+    heading: "Digital projects, technically operated and continuously developed.",
+    text: "I develop and run my own web services, data platforms and software tools — from application code and databases through deployment, infrastructure and ongoing maintenance.",
     stats: [
-      { value: "Junior", label: "Career changer into IT" },
-      { value: "Linux-first", label: "Operations & automation" },
-      { value: "AZ-900", label: "Azure Fundamentals" }
+      { value: "3", label: "active project lines" },
+      { value: "Production", label: "deployed and maintained" },
+      { value: "Linux-first", label: "operations & automation" }
     ],
     skills: [
-      "Linux", "Azure Fundamentals", "Docker", "Python", "PostgreSQL", "Monitoring"
+      "Build", "Deploy", "Monitor", "Maintain"
     ]
   },
+
+  rowLabels: ["EVE Market Tools", "DispoHub", "OpsProbe"],
 
   // Tiles are laid out three per row, and one row = one project. Every third
   // entry starts a new row and gets the vertical label on the left ("Project 1",
@@ -51,7 +52,7 @@ window.PORTFOLIO_DATA = {
       // the EVE Market Tools platform. Values come from platformMetrics below.
       type: "metrics",
       cardTitle: "EVE Platform · Live Metrics",
-      cardCategory: "Production Data Platform",
+      cardCategory: "Active · Production Data Platform",
       ariaLabel: "Key metrics of the production EVE Market Tools platform"
     },
     {
@@ -96,10 +97,10 @@ window.PORTFOLIO_DATA = {
     },
     {
       // Tile 4 (row 2, left): the stack at a glance. Static on purpose — this
-      // is the tile a recruiter scans for technology names.
+      // gives a compact technical view of the project.
       type: "keywords",
       cardTitle: "DispoHub · Stack",
-      cardCategory: "Dispatch & Fleet Management Platform",
+      cardCategory: "Active development · Fleet Platform",
       ariaLabel: "Technologies used in the DispoHub project",
       // Shown on the small tile face — keep this to roughly a dozen entries so
       // nothing gets clipped. The full grouped list below appears in the modal.
@@ -154,12 +155,12 @@ window.PORTFOLIO_DATA = {
     },
 
     // ---- Row 3: OpsProbe -------------------------------------------------
-    // A recruiter-friendly overview, deterministic demo visuals, then direct
+    // A concise overview, deterministic demo visuals, then direct
     // links to the source and the published release.
     {
       type: "keywords",
       cardTitle: "OpsProbe",
-      cardCategory: "Linux Operations CLI",
+      cardCategory: "Active · Linux Operations CLI",
       ariaLabel: "OpsProbe overview and technologies",
       summary: "A small Go CLI for repeat Linux checks: health, services, containers, security, and backups.",
       highlights: [

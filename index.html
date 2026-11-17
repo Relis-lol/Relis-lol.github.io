@@ -3,8 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Portfolio — Junior Cloud &amp; Platform Operations</title>
-<meta name="description" content="Portfolio of a career changer into IT: self-operated Linux and cloud systems, data platforms and production software. Linux, Docker, Python, PostgreSQL, Azure fundamentals.">
+<title>Björn Boldt — Digital Projects &amp; Infrastructure</title>
+<meta name="description" content="Personal portfolio of independently developed and operated web services, data platforms, software tools and infrastructure projects.">
+<link rel="canonical" href="https://relis-lol.github.io/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://relis-lol.github.io/">
+<meta property="og:title" content="Björn Boldt — Digital Projects &amp; Infrastructure">
+<meta property="og:description" content="Independently developed and operated web services, data platforms, software tools and infrastructure projects.">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Björn Boldt — Digital Projects &amp; Infrastructure">
+<meta name="twitter:description" content="Independent digital projects, infrastructure and ongoing operations.">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -28,17 +36,21 @@
 
       <div class="contact-list" id="contact-list"></div>
 
-      <a class="cv-btn" id="cv-btn" href="#" target="_blank" rel="noopener" style="display:none">
-        <svg viewBox="0 0 16 16" width="15" height="15" fill="currentColor"><path d="M2.75 14A1.75 1.75 0 0 1 1 12.25v-2.5a.75.75 0 0 1 1.5 0v2.5c0 .138.112.25.25.25h10.5a.25.25 0 0 0 .25-.25v-2.5a.75.75 0 0 1 1.5 0v2.5A1.75 1.75 0 0 1 13.25 14Z"/><path d="M7.25 7.689V2a.75.75 0 0 1 1.5 0v5.689l1.97-1.969a.75.75 0 1 1 1.06 1.06l-3.25 3.25a.75.75 0 0 1-1.06 0L4.22 6.78a.75.75 0 1 1 1.06-1.06z"/></svg>
-        <span>Résumé</span>
-      </a>
-
       <div class="cert-list" id="cert-list"></div>
     </div>
   </aside>
 
   <main class="main">
-    <section class="hero">
+    <nav class="portfolio-nav" aria-label="Portfolio navigation">
+      <a href="#home">Home</a>
+      <a href="#projects">Projects</a>
+      <a href="#operations">Operations</a>
+      <a href="#about">About</a>
+      <a href="https://github.com/Relis-lol" target="_blank" rel="noopener noreferrer">GitHub</a>
+    </nav>
+
+    <section class="hero" id="home">
+      <p class="section-kicker">Independent builder &amp; project operator</p>
       <h2 class="hero__heading" id="hero-heading"></h2>
       <p class="hero__text" id="hero-text"></p>
 
@@ -47,10 +59,61 @@
       <div class="skills" id="skills"></div>
     </section>
 
-    <section class="tiles" id="tiles"></section>
+    <section class="projects-section" id="projects" aria-labelledby="projects-heading">
+      <header class="section-head">
+        <p class="section-kicker">Selected work</p>
+        <h2 id="projects-heading">Projects I build and operate</h2>
+        <p>Each row shows one real project from three angles: what runs, how it is built, and where its public system or source can be inspected.</p>
+      </header>
+      <div class="tiles" id="tiles"></div>
+    </section>
+
+    <section class="content-section" id="operations" aria-labelledby="operations-heading">
+      <header class="section-head">
+        <p class="section-kicker">What happens behind the projects</p>
+        <h2 id="operations-heading">Operations are part of the build.</h2>
+        <p>The projects are not just prototypes. I keep their deployment, data, domains and routine maintenance working over time.</p>
+      </header>
+      <div class="operations-grid">
+        <article><span>01</span><h3>Linux servers</h3><p>Service configuration, updates and practical fault analysis.</p></article>
+        <article><span>02</span><h3>Docker deployments</h3><p>Repeatable application stacks with separated services and health checks.</p></article>
+        <article><span>03</span><h3>Data &amp; PostgreSQL</h3><p>Imports, migrations, backups and recovery-aware data handling.</p></article>
+        <article><span>04</span><h3>Domains &amp; access</h3><p>DNS, TLS, reverse-proxy paths and Cloudflare-based delivery.</p></article>
+        <article><span>05</span><h3>Automation</h3><p>Scheduled jobs, feed pipelines, CI checks and repeatable releases.</p></article>
+        <article><span>06</span><h3>Monitoring &amp; security</h3><p>Health signals, logs, restricted exposure and separated secrets.</p></article>
+      </div>
+
+      <div class="tools-block" aria-labelledby="tools-heading">
+        <h3 id="tools-heading">Tools I use</h3>
+        <div class="tool-groups">
+          <div><strong>Infrastructure</strong><span>Linux · Docker · Cloudflare · GitHub</span></div>
+          <div><strong>Backend &amp; data</strong><span>Python · FastAPI · PostgreSQL · Go</span></div>
+          <div><strong>Web</strong><span>HTML · CSS · JavaScript · Next.js</span></div>
+          <div><strong>Operations</strong><span>DNS · Backups · Monitoring · Deployment</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section about-section" id="about" aria-labelledby="about-heading">
+      <div>
+        <p class="section-kicker">About</p>
+        <h2 id="about-heading">Long-term operation over one-off prototypes</h2>
+      </div>
+      <div class="about-copy">
+        <p>I develop and operate several digital projects and handle much of their technical lifecycle myself: application work, deployment, servers, databases, domains, automation, maintenance and debugging.</p>
+        <p>My professional background began outside IT. I have developed my infrastructure and software practice continuously through systems that are actually deployed, used and maintained.</p>
+      </div>
+    </section>
+
+    <section class="github-cta" aria-labelledby="github-heading">
+      <div><p class="section-kicker">Public work</p><h2 id="github-heading">Repositories and technical documentation</h2><p>Public source, releases and selected architecture notes are available on GitHub. Some operated projects remain private and are presented here without a source link.</p></div>
+      <a href="https://github.com/Relis-lol" target="_blank" rel="noopener noreferrer">Explore GitHub</a>
+    </section>
   </main>
 
 </div>
+
+<footer class="site-footer"><p>Björn Boldt · Digital Projects &amp; Infrastructure</p></footer>
 
 <div class="modal" id="modal" aria-hidden="true">
   <div class="modal__backdrop" id="modal-backdrop"></div>

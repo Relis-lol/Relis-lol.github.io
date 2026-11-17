@@ -233,29 +233,6 @@ body {
 }
 .contact-item:hover svg { color: var(--accent); }
 
-.cv-btn {
-  margin-top: 18px;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  padding: 8px 14px;
-  border-radius: 6px;
-  border: 1px solid var(--border);
-  background: var(--bg-elevated);
-  color: var(--fg);
-  font-size: 14px;
-  font-weight: 500;
-  text-decoration: none;
-  transition: background 0.18s var(--ease), border-color 0.18s var(--ease), transform 0.18s var(--ease);
-}
-.cv-btn:hover {
-  background: var(--bg-elevated-2);
-  border-color: var(--fg-subtle);
-  transform: translateY(-1px);
-}
-
 .cert-list {
   width: 100%;
   margin-top: 16px;
@@ -294,6 +271,32 @@ body {
 .main {
   padding: 48px 40px 80px;
   min-width: 0;
+}
+
+.portfolio-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 22px;
+  padding-bottom: 18px;
+  margin-bottom: 48px;
+  border-bottom: 1px solid var(--border-muted);
+}
+.portfolio-nav a {
+  color: var(--fg-muted);
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+}
+.portfolio-nav a:hover { color: var(--accent); }
+
+.section-kicker {
+  margin: 0 0 10px;
+  color: var(--accent);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
 }
 
 .hero__heading {
@@ -361,9 +364,113 @@ body {
   transform: translateY(-2px);
 }
 
+.projects-section,
+.content-section,
+.github-cta { scroll-margin-top: 24px; }
+
+.projects-section { margin-top: 84px; }
+.section-head { max-width: 680px; }
+.section-head h2,
+.about-section h2,
+.github-cta h2 {
+  margin: 0 0 12px;
+  font-size: 26px;
+  line-height: 1.3;
+  letter-spacing: -.01em;
+}
+.section-head > p:last-child,
+.about-copy p,
+.github-cta p {
+  color: var(--fg-muted);
+  line-height: 1.65;
+}
+
+.content-section {
+  margin-top: 96px;
+  padding-top: 48px;
+  border-top: 1px solid var(--border-muted);
+}
+.operations-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1px;
+  margin-top: 32px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--border);
+}
+.operations-grid article {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: 14px;
+  padding: 22px;
+  background: var(--bg-elevated);
+}
+.operations-grid article > span {
+  grid-row: 1 / 3;
+  color: var(--accent);
+  font: 700 11px/1.5 var(--font-mono);
+}
+.operations-grid h3 { margin: 0 0 6px; font-size: 15px; }
+.operations-grid p { margin: 0; color: var(--fg-muted); font-size: 13px; line-height: 1.55; }
+
+.tools-block { margin-top: 44px; }
+.tools-block > h3 { margin: 0 0 18px; font-size: 18px; }
+.tool-groups { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.tool-groups > div {
+  display: grid;
+  gap: 6px;
+  padding: 16px 18px;
+  border-left: 2px solid var(--accent);
+  background: var(--bg-elevated);
+}
+.tool-groups strong { font-size: 13px; }
+.tool-groups span { color: var(--fg-muted); font-size: 13px; line-height: 1.5; }
+
+.about-section {
+  display: grid;
+  grid-template-columns: minmax(220px, .8fr) minmax(0, 1.2fr);
+  gap: 52px;
+}
+.about-copy p { margin: 0; }
+.about-copy p + p { margin-top: 14px; }
+
+.github-cta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  margin-top: 72px;
+  padding: 28px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--bg-elevated);
+}
+.github-cta > div { max-width: 590px; }
+.github-cta p:last-child { margin-bottom: 0; }
+.github-cta > a {
+  flex: 0 0 auto;
+  padding: 10px 16px;
+  border: 1px solid var(--accent);
+  border-radius: 7px;
+  color: var(--fg);
+  font-weight: 600;
+  text-decoration: none;
+}
+.github-cta > a:hover { color: #fff; background: var(--accent-emphasis); }
+
+.site-footer {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 24px 40px 40px 336px;
+  color: var(--fg-subtle);
+  font-size: 12px;
+}
+
 /* ---------- tiles ---------- */
 .tiles {
-  margin-top: 44px;
+  margin-top: 28px;
   display: grid;
   grid-template-columns: 28px repeat(3, 1fr);
   gap: 22px;
@@ -1080,6 +1187,12 @@ body {
   .contact-item { justify-content: center; }
   .main { padding: 32px 20px 60px; }
   .tiles { grid-template-columns: 1fr; }
+  .portfolio-nav { justify-content: center; margin-bottom: 36px; }
+  .projects-section { margin-top: 64px; }
+  .operations-grid, .tool-groups, .about-section { grid-template-columns: 1fr; }
+  .about-section { gap: 16px; }
+  .github-cta { align-items: flex-start; flex-direction: column; }
+  .site-footer { padding: 20px 20px 32px; text-align: center; }
 }
 
 @media (min-width: 901px) and (max-width: 1180px) {
